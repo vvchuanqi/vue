@@ -9,12 +9,12 @@
 	<div class="form" v-bind:class="{ active: !isShow }">
 		<div class="form-group">
 			<label class="control-label">请输入用户名：</label>
-			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码">
+			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="userName">
 			<span class="clear" @click="clean">&times;</span>
 		</div>
 		<div class="form-group">
 			<label class="control-label">请输入密码：</label>
-			<input type="password" class="form-control" @focus="focus" @blur="blur" placeholder="密码">
+			<input type="password" class="form-control" @focus="focus" @blur="blur" placeholder="密码" id="password">
 			<span class="clear" @click="clean">&times;</span>
 		</div>
 		<button class="btn btn-primary" type="button" @click="login">登录</button>
@@ -45,10 +45,14 @@ export default {
 			this.isShow = true
 		},
 		login: function () {
+			var _this = this;
+			if ($("#userName").val() == "" || $("#password").val() == "") {
+				_this.msg = "请输入帐号和密码";
+				return;
+			}
 			this.isShow = true;
 			this.isLoading = true;
 			this.msg = "loading...";
-			var _this = this;
 			setTimeout(function () {
 				_this.isLoading = false;
 				_this.msg = "登录帐户/密码错误";
