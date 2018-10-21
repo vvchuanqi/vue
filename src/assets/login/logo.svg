@@ -1,0 +1,43 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="166" height="166.063" viewBox="0 0 166 166.063">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="426.328" y1="182.594" x2="361.828" y2="247.094" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.331"/>
+      <stop offset="1" stop-color="#f5cf16"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="411.86" y1="112.563" x2="411.86" y2="205.25" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="358.501" y1="82.031" x2="416" y2="139.531" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="293.297" y1="146.375" x2="358.64" y2="81.031" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.331"/>
+      <stop offset="0.987" stop-color="#f0cb16"/>
+      <stop offset="1" stop-color="#f5cf16"/>
+    </linearGradient>
+  </defs>
+  <path id="logo-2" data-name="logo" class="cls-1" d="M431.014,205.2L360,246.2l-71.014-41v-82L360,82.2l71.014,41v82ZM377,134.758A34,34,0,1,1,330.555,147.2,34,34,0,0,1,377,134.758Z" transform="translate(-277.594 -81.031)"/>
+  <path id="logo-3" data-name="logo" class="cls-2" d="M359.814,247.1l-0.107-.061c-5.1-14.546-.074-35.682,10.283-49.281a33.957,33.957,0,0,0,14.713-9.325c14.486-5.094,34.339-8.34,45.766-3.324L430.44,206.2Z" transform="translate(-277.594 -81.031)"/>
+  <path id="logo-4" data-name="logo" class="cls-3" d="M431.206,205.18l-0.107.062c-15.253-2.9-31.178-17.915-37.852-33.763A34.027,34.027,0,0,0,392.488,154c2.818-15.15,9.941-34.03,20.05-41.429l18.385,10.649Z" transform="translate(-277.594 -81.031)"/>
+  <path id="logo-5" data-name="logo" class="cls-4" d="M432.2,122.909v0.124c-10.2,11.852-31.27,18.209-48.4,16.081a34.028,34.028,0,0,0-15.571-8.107c-11.745-10.059-24.563-25.745-25.9-38.275l18.512-10.7Z" transform="translate(-277.594 -81.031)"/>
+  <path id="logo-6" data-name="logo" class="cls-5" d="M360.59,81.03l0.109,0.063c5.246,14.823.25,36.3-10.188,50.086a33.983,33.983,0,0,0-14.877,9.414c-14.668,5.113-34.789,8.318-46.4,3.159L289.156,122.3Z" transform="translate(-277.594 -81.031)"/>
+</svg>
