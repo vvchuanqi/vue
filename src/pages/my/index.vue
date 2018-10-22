@@ -47,7 +47,7 @@
 			<div class="list-ft">3</div>
 		</div>
 		<div class="list list-link">
-			<div class="list-hd"><img src="../../assets/my/avatar.jpg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
+			<div class="list-hd"><img src="../../assets/my/icon_fav.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
 			<div class="list-bd">收藏夹</div>
 			<div class="list-ft">3</div>
 		</div>
@@ -55,7 +55,7 @@
 
 	<div class="lists">
 		<div class="list list-link">
-			<div class="list-hd"><img src="../../assets/my/avatar.jpg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
+			<div class="list-hd"><img src="../../assets/my/icon_off.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
 			<div class="list-bd">退出登录</div>
 		</div>
 	</div>
