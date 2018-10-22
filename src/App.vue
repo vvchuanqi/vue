@@ -12,4 +12,5 @@ export default {
 
 <style lang="less">
 @import '../static/less/global';
+
 </style>
