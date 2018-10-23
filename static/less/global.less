@@ -198,7 +198,7 @@ a:link {
     top: 0;
     left: 16px;
     right: 0;
-    border-top: 1px solid #e8eaec;
+    border-top: 1px solid @divider-color;
     transform: scaleY(0.5);
   }
   &:first-child:before {
@@ -229,7 +229,7 @@ a:link {
       padding-right: 13px;
       &:after {
         content: " ";
-        display: inline-block;
+        display: block;
         height: 6px;
         width: 6px;
         border-width: 2px 2px 0 0;
@@ -246,3 +246,48 @@ a:link {
   }
 }
 // end list
+// start panel
+.panel {
+  background-color: #fff;
+  margin-bottom: 16px;
+  .panel-hd {
+    font-size: 16px;
+    font-weight: 800;
+    padding: 12px 16px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 0;
+      border-top: 1px solid @divider-color;
+      transform: scaleY(0.5);
+    }
+  }
+  .panel-ft {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16px;
+      right: 0;
+      border-top: 1px solid @divider-color;
+      transform: scaleY(0.5);
+      z-index: 2;
+    }
+  }
+}
+// end panel
+// start card
+.card {
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  margin: 16px;
+  &:active {
+    background-color: @bg-color;
+  }
+}
+// end card
