@@ -4,9 +4,7 @@
     <div class="title">{{title}}</div>
   </header>
   <div class="tab-panel">
-    <transition :name="transitionName">
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
   </div>
   <footer>
     <div class="tabbar">
@@ -27,7 +25,6 @@ export default {
     return {
       title: '管理后台',
       currentIndex: 0,
-      transitionName: "fade",
     }
   },
   mounted() {
@@ -81,18 +78,6 @@ export default {
 }
 </script>
 <style scoped lang='less'>
-.fade-enter-active {
-    transition: all 0.2s ease;
-}
-.fade-leave-active {
-    transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-/* .fade-leave-active for below version 2.1.8 */
-.fade-enter,
-.fade-leave-to {
-    // transform: translateY(100px);
-    opacity: 0;
-}
 .hello {
     .tab-panel {
         flex: 1;
