@@ -50,18 +50,19 @@ html {
     height: 48px;
     background-color: #fff;
     .title {
+      flex: 1;
       padding: 0 16px;
       color: @title-color;
       font-weight: 800;
       font-size: 24px;
-      flex: 1;
+      line-height: 1;
     }
     .header-left a,
     .header-right a {
       display: block;
       padding: 0 16px;
       &:active {
-        opacity: 0.7;
+        opacity: .7;
       }
     }
   }
@@ -86,9 +87,9 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #e8ecef;
   z-index: 500;
   flex: none;
+  background-color: #e8ecef;
 }
 a:link {
   color: @content-color;
@@ -149,7 +150,7 @@ a:link {
   border-radius: 4px;
   font-size: 16px;
   line-height: 32px;
-  transition: all 0.2s;
+  transition: all .2s;
   -webkit-appearance: none;
   &:focus {
     border-color: @primary-color;
@@ -166,7 +167,7 @@ a:link {
   border-radius: 4px;
   font-size: 16px;
   line-height: 32px;
-  transition: all 0.2s;
+  transition: all .2s;
 }
 .btn-primary {
   background-color: @warning-color;
@@ -229,8 +230,8 @@ a:link {
 // start list
 .list-title {
   padding: 16px 16px 8px;
-  font-size: 14px;
   color: @sub-color;
+  font-size: 14px;
 }
 .lists {
   margin-bottom: 16px;
