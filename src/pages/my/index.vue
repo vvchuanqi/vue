@@ -54,12 +54,15 @@
   </div>
 
   <div class="lists">
-    <div class="list list-link">
+    <div class="list list-link" @click="logOut">
       <div class="list-hd"><img src="../../assets/my/icon_off.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">退出登录</div>
     </div>
   </div>
   <!-- / -->
+  <transition :name="transitionName">
+    <router-view class="cover"></router-view>
+  </transition>
 </div>
 </template>
 
@@ -68,10 +71,17 @@ export default {
   name: 'my',
   data() {
     return {
-      msg: '我'
+      msg: '我',
+      transitionName: 'fade',
     }
   },
-  methods: {}
+  methods: {
+    logOut() {
+      this.$router.push({
+        path: "/"
+      });
+    }
+  }
 }
 </script>
 <style scoped lang='less'>

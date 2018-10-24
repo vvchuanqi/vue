@@ -23,28 +23,78 @@
 .hello,
 body,
 html {
-  box-sizing: border-box;margin: 0;padding: 0;width: 100%;height: 100%;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 #app {
-  color: @content-color;font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;-webkit-font-smoothing: antialiased;
-  }
+  color: @content-color;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 .hello {
-  display: flex;flex-flow: column;
-  .content-box {overflow: hidden;overflow-y: auto;flex: 1;
-    }
-  header {display: flex;align-items: center;flex-flow: row;justify-content: space-between;height: 48px;background-color: #fff;
-    .title {padding: 0 16px;color: @title-color;font-weight: 800;font-size: 24px;
-      }
-    .header-right{margin-right:16px;}
+  display: flex;
+  flex-flow: column;
+  .content-box {
+    overflow: hidden;
+    overflow-y: auto;
+    flex: 1;
   }
-  footer {position: relative;height: 56px;background-color: #fff;
-    &:before {position: absolute;top: 0;right: 0;left: 0;border-top: 1px solid @divider-color;content: "";transform: scaleY(0.5);
+  header {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    justify-content: space-between;
+    height: 48px;
+    background-color: #fff;
+    .title {
+      padding: 0 16px;
+      color: @title-color;
+      font-weight: 800;
+      font-size: 24px;
+      flex: 1;
+    }
+    .header-left a,
+    .header-right a {
+      display: block;
+      padding: 0 16px;
+      &:active {
+        opacity: 0.7;
       }
+    }
+  }
+  footer {
+    position: relative;
+    height: 56px;
+    background-color: #fff;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      border-top: 1px solid @divider-color;
+      content: "";
+      transform: scaleY(0.5);
+    }
   }
 }
+.cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e8ecef;
+  z-index: 500;
+  flex: none;
+}
 a:link {
-  color: @content-color;text-decoration: none;
-  }
+  color: @content-color;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 .text-left {
   text-align: left !important;
 }
@@ -54,25 +104,73 @@ a:link {
 .text-center {
   text-align: center !important;
 }
+.color-title {
+  color: @title-color;
+}
+.color-content {
+  color: @content-color;
+}
+.color-sub {
+  color: @sub-color;
+}
+.f20 {
+  font-size: 20px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f12 {
+  font-size: 12px;
+}
 // end =========以上是全局的设置
 // start =========表单开始
 .form-group {
   margin: 0 0 16px;
   .control-label {
-    display: block;margin-bottom: 8px;color: @sub-color;font-size: 14px;
-    }
+    display: block;
+    margin-bottom: 8px;
+    color: @sub-color;
+    font-size: 14px;
+  }
 }
 .form-control {
-  display: block;padding: 8px 16px;width: 100%;height: 48px;outline: none;border: 1px solid #e5e5e6;border-radius: 4px;font-size: 16px;line-height: 32px;transition: all 0.2s;-webkit-appearance: none;
+  display: block;
+  padding: 8px 16px;
+  width: 100%;
+  height: 48px;
+  outline: none;
+  border: 1px solid #e5e5e6;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 32px;
+  transition: all 0.2s;
+  -webkit-appearance: none;
   &:focus {
-    border-color: @primary-color;box-shadow: 0 2px 10px rgba(255, 153, 0, 0.4);
-    }
+    border-color: @primary-color;
+    box-shadow: 0 2px 10px rgba(255, 153, 0, 0.4);
+  }
 }
 .btn {
-  display: block;padding: 8px 16px;width: 100%;height: 48px;outline: none;border: none;border-radius: 4px;font-size: 16px;line-height: 32px;transition: all 0.2s;
-  }
+  display: block;
+  padding: 8px 16px;
+  width: 100%;
+  height: 48px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 32px;
+  transition: all 0.2s;
+}
 .btn-primary {
-  background-color: @warning-color;color: #FFF;
+  background-color: @warning-color;
+  color: #FFF;
   &:active,
   &:focus {
     background-color: darken(@warning-color,5%);
@@ -81,7 +179,8 @@ a:link {
 // end =========表单结束
 // start flex布局
 .flex-box {
-  display: flex;flex-flow: row;
+  display: flex;
+  flex-flow: row;
   &.flex-box-vertical {
     flex-flow: column;
   }
@@ -92,13 +191,21 @@ a:link {
 // end flex布局
 // tabar
 .tabbar {
-  display: flex;flex-flow: row;
+  display: flex;
+  flex-flow: row;
   .tabbar-item {
-    flex: 1;padding: 4px 0 0;height: 56px;text-align: center;
+    flex: 1;
+    padding: 4px 0 0;
+    height: 56px;
+    text-align: center;
     &:active {
       background-color: @bg-color;
     }
-    .tabbar-icon {display: block;margin: 0 auto;width: 28px;height: 28px;
+    .tabbar-icon {
+      display: block;
+      margin: 0 auto;
+      width: 28px;
+      height: 28px;
       > img {
         filter:brightness(1.5) grayscale(1);
       }
@@ -120,52 +227,118 @@ a:link {
 }
 // end tabbar
 // start list
+.list-title {
+  padding: 16px 16px 8px;
+  font-size: 14px;
+  color: @sub-color;
+}
 .lists {
   margin-bottom: 16px;
 }
-.list {position: relative;display: flex;align-items: center;padding: 12px 16px;background-color: #FFF;font-size: 18px;
-  &:before {position: absolute;top: 0;right: 0;left: 16px;border-top: 1px solid @divider-color;content: "";transform: scaleY(0.5);
-    }
+.list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #FFF;
+  font-size: 18px;
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 16px;
+    border-top: 1px solid @divider-color;
+    content: "";
+    transform: scaleY(0.5);
+  }
   &:first-child:before {
     display: none;
   }
   .list-hd {
     .list-label {
-      display: block;width: 112px;word-wrap: break-word;word-break: break-all;
-      }
+      display: block;
+      width: 112px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
   }
   .list-bd {
     flex: 1;
+    color: @title-color;
   }
-  .list-ft {color: @sub-color;text-align: right;opacity: 0.7;
-    }
+  .list-ft {
+    color: @sub-color;
+    text-align: right;
+  }
   &.list-link {
     &:active {
       background-color: @bg-color;
     }
     .list-ft {
-      position: relative;padding-right: 13px;
-      &:after {position: absolute;top: -2px;top: 50%;right: 2px;display: block;margin-top: -4px;width: 6px;height: 6px;border-width: 2px 2px 0 0;border-style: solid;border-color: @disabled-color;content: " ";transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-        }
+      position: relative;
+      padding-right: 13px;
+      &:after {
+        position: absolute;
+        top: -2px;
+        top: 50%;
+        right: 2px;
+        display: block;
+        margin-top: -4px;
+        width: 6px;
+        height: 6px;
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: @disabled-color;
+        content: " ";
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      }
     }
   }
 }
 // end list
 // start panel
-.panel {margin-bottom: 16px;background-color: #fff;
-  .panel-hd {position: relative;padding: 12px 16px;font-weight: 800;font-size: 16px;
-    &:after {position: absolute;right: 0;bottom: 0;left: 16px;border-top: 1px solid @divider-color;content: "";transform: scaleY(0.5);
-      }
+.panel {
+  margin-bottom: 16px;
+  background-color: #fff;
+  .panel-hd {
+    position: relative;
+    padding: 12px 16px;
+    font-weight: 800;
+    font-size: 16px;
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 16px;
+      border-top: 1px solid @divider-color;
+      content: "";
+      transform: scaleY(0.5);
+    }
   }
   .panel-ft {
     position: relative;
-    &:before {position: absolute;top: 0;right: 0;left: 16px;z-index: 2;border-top: 1px solid @divider-color;content: "";transform: scaleY(0.5);
-      }
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 16px;
+      z-index: 2;
+      border-top: 1px solid @divider-color;
+      content: "";
+      transform: scaleY(0.5);
+    }
+  }
+  .list-link {
+    font-size: 14px;
   }
 }
 // end panel
 // start card
-.card {margin: 16px;padding: 16px;border-radius: 8px;background-color: #fff;
+.card {
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
   &:active {
     background-color: @bg-color;
   }

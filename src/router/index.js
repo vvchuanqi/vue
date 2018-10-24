@@ -7,6 +7,7 @@ import home from '@/pages/home/index'
 import stage1 from '@/pages/stage1/index'
 import stage2 from '@/pages/stage2/index'
 import my from '@/pages/my/index'
+import setting from '@/pages/my/setting'
 
 Vue.use(Router)
 
@@ -36,7 +37,14 @@ export default new Router({
       },{
         path: "my",
         name: "my",
-        component: my
+        component: my,
+        children:[
+          {
+            path:"setting",
+            name:"setting",
+            component:setting
+          }
+        ]
       }]
   }]
 })
