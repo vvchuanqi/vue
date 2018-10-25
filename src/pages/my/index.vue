@@ -31,33 +31,33 @@
   <!-- / -->
   <!-- 列表 -->
   <div class="lists">
-    <div class="list list-link">
+    <router-link to="/tabs/my" class="list list-link">
       <div class="list-hd"><img src="../../assets/my/icon_reply.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">待办</div>
       <div class="list-ft">3</div>
-    </div>
-    <div class="list list-link">
+    </router-link>
+    <router-link to="/tabs/my" class="list list-link">
       <div class="list-hd"><img src="../../assets/my/icon_talk.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">待回复</div>
       <div class="list-ft">3</div>
-    </div>
-    <div class="list list-link">
+    </router-link>
+    <router-link to="/tabs/my" class="list list-link">
       <div class="list-hd"><img src="../../assets/my/icon_file.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">我的工单</div>
       <div class="list-ft">3</div>
-    </div>
-    <div class="list list-link">
+    </router-link>
+    <router-link to="/tabs/my" class="list list-link">
       <div class="list-hd"><img src="../../assets/my/icon_fav.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">收藏夹</div>
       <div class="list-ft">3</div>
-    </div>
+    </router-link>
   </div>
 
   <div class="lists">
-    <div class="list list-link" @click="logOut">
+    <router-link to="/" class="list list-link">
       <div class="list-hd"><img src="../../assets/my/icon_off.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
       <div class="list-bd">退出登录</div>
-    </div>
+    </router-link>
   </div>
   <!-- / -->
   <transition :name="transitionName">
@@ -76,11 +76,7 @@ export default {
     }
   },
   methods: {
-    logOut() {
-      this.$router.push({
-        path: "/"
-      });
-    }
+
   }
 }
 </script>
