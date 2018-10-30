@@ -4,8 +4,8 @@
   <div class="user-info">
     <div class="flex-box">
       <div class="flex-item">
-        <div class="user-name">vvchuanqi</div>
-        <div class="help-block">文成武德，一统江湖，我主万岁。</div>
+        <div class="user-name">东方不败</div>
+        <div class="help-block">日出东方,唯我不败,文成武德,千秋万载。</div>
       </div>
       <div class="user-avatar"><img src="../../assets/my/avatar.jpg" alt="张三" height="64" width="64"></div>
     </div>
@@ -15,10 +15,10 @@
   <div class="quick-port">
     <div class="flex-box">
       <div class="flex-item text-center"><strong>1</strong>
-        <div class="port-name">消息</div>
+        <div class="port-name">密报</div>
       </div>
       <div class="flex-item text-center"><strong>22</strong>
-        <div class="port-name">消息</div>
+        <div class="port-name">待办</div>
       </div>
       <div class="flex-item text-center"><strong>6</strong>
         <div class="port-name">消息</div>
