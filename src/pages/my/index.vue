@@ -21,10 +21,10 @@
         <div class="port-name">待办</div>
       </div>
       <div class="flex-item text-center"><strong>6</strong>
-        <div class="port-name">消息</div>
+        <div class="port-name">堂报</div>
       </div>
       <div class="flex-item text-center"><strong>8</strong>
-        <div class="port-name">消息</div>
+        <div class="port-name">会议</div>
       </div>
     </div>
   </div>
