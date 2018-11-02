@@ -44,7 +44,7 @@
 		</div>
 		<div class="form-group">
 			<button class="btn btn-primary" type="button">确定</button></div>
-		<div class="flex-box">
+		<div class="flex-box" style="padding-top:20px;">
 			<div class="flex-item">
 				<span @click="cancel">取消</span>
 			</div>
@@ -55,7 +55,7 @@
 	</div>
 	<!-- end 重置密码 -->
 	<!-- start 注册 -->
-	<div class="form" v-if="showReg">
+	<div class="form" v-bind:class="{ active: !isShow }" v-if="showReg">
 		<div class="form-group">
 			<label class="control-label">请输入帐号：</label>
 			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="userName2" autocomplete="off">
@@ -74,7 +74,7 @@
 		</div>
 		<div class="form-group">
 			<button class="btn btn-primary" type="button">注册</button></div>
-		<div class="flex-box">
+		<div class="flex-box" style="padding-top:20px;">
 			<div class="flex-item">
 				<span @click="cancel">取消</span>
 			</div>
