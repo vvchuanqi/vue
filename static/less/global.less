@@ -1,7 +1,7 @@
 // start ===========用到的几种颜色
 @primary-color: #ff9900;
-@primary-lighter: #5cadff;
-@primary-darker: #2b85e4;
+@primary-lighter: lighten(@primary-color,10%);
+@primary-darker: darken(@primary-color,10%);
 @success-color: #67C23A;
 @warning-color: #ff9900;
 @error-color: #ed4014;
@@ -17,6 +17,8 @@
 *,
 *:after,
 *:before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 #app,
@@ -130,74 +132,6 @@ a:link {
   font-size: 12px;
 }
 // end =========以上是全局的设置
-// start =========表单开始
-.form-group {
-  margin: 0 0 16px;
-  .control-label {
-    display: block;
-    margin-bottom: 8px;
-    color: @sub-color;
-    font-size: 14px;
-  }
-}
-.form-control {
-  display: block;
-  padding: 8px 16px;
-  width: 100%;
-  height: 48px;
-  outline: none;
-  border: 1px solid #e5e5e6;
-  border-radius: 4px;
-  font-size: 16px;
-  line-height: 32px;
-  transition: all 0.2s;
-  -webkit-appearance: none;
-  &:focus {
-    border-color: @primary-color;
-    box-shadow: 0 2px 10px rgba(255, 153, 0, 0.4);
-  }
-}
-.btn {
-  display: block;
-  padding: 8px 16px;
-  width: 100%;
-  height: 48px;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  line-height: 32px;
-  transition: all 0.2s;
-}
-.btn-primary {
-  background-color: @warning-color;
-  color: #FFF;
-  &:active,
-  &:focus {
-    background-color: darken(@warning-color,5%);
-  }
-}
-.btn-success {
-  background-color: @success-color;
-  color: #FFF;
-  &:active,
-  &:focus {
-    background-color: darken(@success-color,5%);
-  }
-}
-// end =========表单结束
-// start flex布局
-.flex-box {
-  display: flex;
-  flex-flow: row;
-  &.flex-box-vertical {
-    flex-flow: column;
-  }
-  .flex-item {
-    flex: 1;
-  }
-}
-// end flex布局
 // tabar
 .tabbar {
   display: flex;
@@ -235,121 +169,15 @@ a:link {
   }
 }
 // end tabbar
-// start list
-.list-title {
-  padding: 16px 16px 8px;
-  color: @sub-color;
-  font-size: 14px;
+// start 转场动画
+.fade-enter-active {
+  transition: all 0.2s ease;
 }
-.lists {
-  margin-bottom: 16px;
+.fade-leave-active {
+  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.list {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  background-color: #FFF;
-  font-size: 18px;
-  &:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 16px;
-    border-top: 1px solid @divider-color;
-    content: "";
-    transform: scaleY(0.5);
-  }
-  &:first-child:before {
-    display: none;
-  }
-  .list-hd {
-    .list-label {
-      display: block;
-      width: 112px;
-      word-wrap: break-word;
-      word-break: break-all;
-    }
-  }
-  .list-bd {
-    flex: 1;
-    color: @title-color;
-  }
-  .list-ft {
-    color: @sub-color;
-    text-align: right;
-  }
-  &.list-link {
-    &:active {
-      background-color: @bg-color;
-    }
-    .list-ft {
-      position: relative;
-      padding-right: 13px;
-      &:after {
-        position: absolute;
-        top: -2px;
-        top: 50%;
-        right: 2px;
-        display: block;
-        margin-top: -4px;
-        width: 6px;
-        height: 6px;
-        border-width: 2px 2px 0 0;
-        border-style: solid;
-        border-color: @disabled-color;
-        content: " ";
-        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-      }
-    }
-  }
+.fade-enter,
+.fade-leave-to {
+  transform: translateX(100%);
 }
-// end list
-// start panel
-.panel {
-  margin-bottom: 16px;
-  background-color: #fff;
-  .panel-hd {
-    position: relative;
-    padding: 12px 16px;
-    font-weight: 800;
-    font-size: 16px;
-    &:after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 16px;
-      border-top: 1px solid @divider-color;
-      content: "";
-      transform: scaleY(0.5);
-    }
-  }
-  .panel-ft {
-    position: relative;
-    &:before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 16px;
-      z-index: 2;
-      border-top: 1px solid @divider-color;
-      content: "";
-      transform: scaleY(0.5);
-    }
-  }
-  .list-link {
-    font-size: 14px;
-  }
-}
-// end panel
-// start card
-.card {
-  margin: 16px;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: #fff;
-  &:active {
-    background-color: @bg-color;
-  }
-}
-// end card
+//end 转场动画

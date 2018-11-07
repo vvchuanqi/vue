@@ -1,64 +1,59 @@
 <template>
 <div class="hello">
   <!-- 用户信息 -->
-  <div class="user-info">
-    <div class="flex-box">
-      <div class="flex-item">
-        <div class="user-name">东方不败</div>
-        <div class="help-block">日出东方,唯我不败,文成武德,千秋万载。</div>
-      </div>
-      <div class="user-avatar"><img src="../../assets/my/avatar.jpg" alt="张三" height="64" width="64"></div>
-    </div>
-  </div>
+  <flexbox class="user-info">
+    <flexbox-item>
+      <div class="user-name">东方不败</div>
+      <div class="help-block">日出东方,唯我不败,文成武德,千秋万载。</div>
+    </flexbox-item>
+    <div class="user-avatar"><img src="../../assets/my/avatar.jpg" alt="张三" height="64" width="64"></div>
+  </flexbox>
   <!-- / -->
   <!-- 快捷入口 -->
-  <div class="quick-port">
-    <div class="flex-box">
-      <div class="flex-item text-center"><strong>1</strong>
+  <div>
+    <flexbox class="quick-port">
+      <flexbox-item class="text-center">
+        <strong>1</strong>
         <div class="port-name">密报</div>
-      </div>
-      <div class="flex-item text-center"><strong>22</strong>
+      </flexbox-item>
+      <flexbox-item class="text-center">
+        <strong>22</strong>
         <div class="port-name">待办</div>
-      </div>
-      <div class="flex-item text-center"><strong>6</strong>
+      </flexbox-item>
+      <flexbox-item class="text-center">
+        <strong>6</strong>
         <div class="port-name">堂报</div>
-      </div>
-      <div class="flex-item text-center"><strong>8</strong>
+      </flexbox-item>
+      <flexbox-item class="text-center">
+        <strong>8</strong>
         <div class="port-name">会议</div>
-      </div>
-    </div>
+      </flexbox-item>
+    </flexbox>
   </div>
   <!-- / -->
   <!-- 列表 -->
-  <div class="lists">
-    <router-link to="/tabs/my" class="list list-link">
-      <div class="list-hd"><img src="../../assets/my/icon_reply.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
-      <div class="list-bd">待办</div>
-      <div class="list-ft">3</div>
-    </router-link>
-    <router-link to="/tabs/my" class="list list-link">
-      <div class="list-hd"><img src="../../assets/my/icon_talk.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
-      <div class="list-bd">待回复</div>
-      <div class="list-ft">3</div>
-    </router-link>
-    <router-link to="/tabs/my" class="list list-link">
-      <div class="list-hd"><img src="../../assets/my/icon_file.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
-      <div class="list-bd">我的工单</div>
-      <div class="list-ft">3</div>
-    </router-link>
-    <router-link to="/tabs/my" class="list list-link">
-      <div class="list-hd"><img src="../../assets/my/icon_fav.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
-      <div class="list-bd">收藏夹</div>
-      <div class="list-ft">3</div>
-    </router-link>
-  </div>
-
-  <div class="lists">
-    <router-link to="/" class="list list-link">
-      <div class="list-hd"><img src="../../assets/my/icon_off.svg" alt="" height="24" width="24" style="margin-right:16px;display:block;"></div>
-      <div class="list-bd">退出登录</div>
-    </router-link>
-  </div>
+  <group>
+    <cell title="待办" is-link>
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_reply.svg">
+      <badge text="1"></badge>
+    </cell>
+    <cell title="待回复" is-link>
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_talk.svg">
+      <badge text="1"></badge>
+    </cell>
+    <cell title="我的工单" is-link>
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_file.svg">
+      <badge text="1"></badge>
+    </cell>
+    <cell title="收藏夹" is-link>
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_fav.svg">
+    </cell>
+  </group>
+  <group>
+    <cell title="退出登录" is-link link="/">
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_off.svg">
+    </cell>
+  </group>
   <!-- / -->
   <transition :name="transitionName">
     <router-view class="cover"></router-view>
@@ -67,8 +62,22 @@
 </template>
 
 <script>
+import {
+  Flexbox,
+  FlexboxItem,
+  Cell,
+  Group,
+  Badge,
+} from 'vux'
 export default {
   name: 'my',
+  components: {
+    Flexbox,
+    FlexboxItem,
+    Cell,
+    Group,
+    Badge,
+  },
   data() {
     return {
       msg: '我',
@@ -105,7 +114,7 @@ export default {
         background-color: #FFF;
         position: relative;
         margin-bottom: 16px;
-        .flex-item {
+        .vux-flexbox-item {
             padding: 8px 0;
             &:active {
                 background-color: #f8f8f9;

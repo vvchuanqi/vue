@@ -1,0 +1,24 @@
+// start ===========用到的几种颜色
+@primary-color: #ff9900;
+@primary-lighter: lighten(@primary-color,10%);
+@primary-darker: darken(@primary-color,10%);
+@success-color: #67C23A;
+@warning-color: #ff9900;
+@error-color: #ed4014;
+@info-color: #2db7f5;
+@title-color: #17233d;
+@content-color: #515a6e;
+@sub-color: #808695;
+@disabled-color: #c5c8ce;
+@border-color: #dcdee2;
+@divider-color: #e8eaec;
+@bg-color: #f8f8f9; // end ===========用到的几种颜色
+// start 按钮的重定义
+@button-primary-bg-color: @primary-color;
+@button-primary-active-bg-color: @primary-darker;
+@button-primary-disabled-bg-color: @primary-lighter; // end 按钮的重定义
+// start Cell
+@cell-font-size: 18px;
+@cell-label-color: @title-color;
+@cell-body-label-color: @title-color;
+@cell-value-color: @sub-color;

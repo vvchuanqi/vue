@@ -22,7 +22,7 @@
 <div class="hello">
   <div class="content-box">
     <div class="panel">
-      <div class="panel-hd">快速入口</div>
+      <div class="panel-hd">产品体验小工具</div>
       <div class="panel-bd">
         <div class="flex-box my-resume">
           <div class="flex-item flex-box flex-box-vertical">
