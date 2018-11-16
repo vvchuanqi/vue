@@ -1,162 +1,144 @@
 <template>
 <div class="hello">
-	<transition name="scale">
-		<div v-show="isShow">
-			<img src="../assets/login/logo.svg" width="83" height="83" alt="logo" class="logo" v-bind:class="{ rotate: isLoading }">
-			<h2 class="title">{{ msg }}</h2>
-		</div>
-	</transition>
-	<!-- start 登录 -->
-	<div class="form" v-bind:class="{ active: !isShow }" v-if="showLogin">
-		<div class="form-group">
-			<label class="control-label">请输入帐号：</label>
-			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="userName" autocomplete="off">
-			<span class="clear" @click="clean">&times;</span>
-		</div>
-		<div class="form-group">
-			<label class="control-label">请输入密码：</label>
-			<input type="password" class="form-control" @focus="focus" @blur="blur" placeholder="密码" id="password" autocomplete="off">
-			<span class="clear" @click="clean">&times;</span>
-		</div>
-		<div class="form-group"><button class="btn btn-primary" type="button" @click="login">登录</button></div>
-		<div class="flex-box" style="padding-top:20px;">
-			<div class="flex-item">
-				<span @click="changePassword">重置密码</span>
-			</div>
-			<div class="flex-item text-right">
-				<span @click="reg">注册</span>
-			</div>
-		</div>
-	</div>
-	<!-- end 登录 -->
-	<!-- start 重置密码 -->
-	<div class="form" v-bind:class="{ active: !isShow }" v-if="showChangePassword">
-		<div class="form-group">
-			<label class="control-label">请输入帐号：</label>
-			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="userName2" autocomplete="off">
-			<span class="clear" @click="clean">&times;</span>
-		</div>
-		<div class="form-group">
-			<div class="flex-box">
-				<div class="flex-item"><input type="text" class="form-control" placeholder="验证码" id="yzm" autocomplete="off" @focus="focus" @blur="blur"></div>
-				<div class="flex-item" style="padding-left:8px;"><button class="btn btn-success" type="button">获取验证码</button></div>
-			</div>
-		</div>
-		<div class="form-group">
-			<button class="btn btn-primary" type="button">确定</button></div>
-		<div class="flex-box" style="padding-top:20px;">
-			<div class="flex-item">
-				<span @click="cancel">取消</span>
-			</div>
-			<div class="flex-item text-right">
-
-			</div>
-		</div>
-	</div>
-	<!-- end 重置密码 -->
-	<!-- start 注册 -->
-	<div class="form" v-bind:class="{ active: !isShow }" v-if="showReg">
-		<div class="form-group">
-			<label class="control-label">请输入帐号：</label>
-			<input type="text" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="userName2" autocomplete="off">
-			<span class="clear" @click="clean">&times;</span>
-		</div>
-		<div class="form-group">
-			<label class="control-label">请设置密码：</label>
-			<input type="password" class="form-control" @focus="focus" @blur="blur" placeholder="邮箱/手机号码" id="password2" autocomplete="off">
-			<span class="clear" @click="clean">&times;</span>
-		</div>
-		<div class="form-group">
-			<div class="flex-box">
-				<div class="flex-item"><input type="text" class="form-control" placeholder="验证码" id="yzm" autocomplete="off" @focus="focus" @blur="blur"></div>
-				<div class="flex-item" style="padding-left:8px;"><button class="btn btn-success" type="button">获取验证码</button></div>
-			</div>
-		</div>
-		<div class="form-group">
-			<button class="btn btn-primary" type="button">注册</button></div>
-		<div class="flex-box" style="padding-top:20px;">
-			<div class="flex-item">
-				<span @click="cancel">取消</span>
-			</div>
-			<div class="flex-item text-right">
-
-			</div>
-		</div>
-	</div>
-	<!-- end 注册 -->
+  <transition name="scale">
+    <div v-show="isShow">
+      <img src="../assets/login/logo.svg" width="83" height="83" alt="logo" class="logo" v-bind:class="{ rotate: isLoading }">
+    </div>
+  </transition>
+  <!-- start 登录 -->
+  <div class="form" v-bind:class="{ active: !isShow }" v-if="showLogin">
+    <h2 class="title">{{ msg }}</h2>
+    <group>
+      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码" id="userName"></x-input>
+      <x-input title="" type="password" @on-focus="focus" @on-blur="blur" placeholder="请输入密码" id="password"></x-input>
+    </group>
+    <box gap="16px 0">
+      <x-button @click.native="login" type="primary">登录</x-button>
+    </box>
+    <flexbox>
+      <flexbox-item><span @click="changePassword">重置密码</span></flexbox-item>
+      <flexbox-item class="text-right"><span @click="reg">注册</span></flexbox-item>
+    </flexbox>
+  </div>
+  <!-- end 登录 -->
+  <!-- start 重置密码 -->
+  <div class="form" v-bind:class="{ active: !isShow }" v-if="showChangePassword">
+    <h2 class="title">{{ msg }}</h2>
+    <group>
+      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码"></x-input>
+      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="验证码">
+        <x-button slot="right" mini>获取验证码</x-button>
+      </x-input>
+    </group>
+    <box gap="16px 0">
+      <x-button type="primary">确定</x-button>
+    </box>
+    <flexbox>
+      <flexbox-item><span @click="cancel">取消</span></flexbox-item>
+      <flexbox-item>
+      </flexbox-item>
+    </flexbox>
+  </div>
+  <!-- end 重置密码 -->
+  <!-- start 注册 -->
+  <div class="form" v-bind:class="{ active: !isShow }" v-if="showReg">
+    <h2 class="title">{{ msg }}</h2>
+    <group>
+      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码"></x-input>
+      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="验证码">
+        <x-button slot="right" mini>获取验证码</x-button>
+      </x-input>
+    </group>
+    <box gap="16px 0">
+      <x-button type="primary">注册</x-button>
+    </box>
+    <flexbox>
+      <flexbox-item><span @click="cancel">取消</span></flexbox-item>
+      <flexbox-item>
+      </flexbox-item>
+    </flexbox>
+  </div>
+  <!-- end 注册 -->
 </div>
 </template>
 
 <script>
+import {
+  XInput,
+  Group,
+  XButton,
+  Flexbox,
+  FlexboxItem,
+  Box,
+} from 'vux'
 export default {
-	name: 'login',
-	data() {
-		return {
-			msg: '后台管理登录',
-			isShow: true, //是否显示logo
-			isLoading: false, //是否给logo添加旋转的loading样式
-			showLogin: true, //是否显示登录框
-			showChangePassword: false, //是否显示重置密码表单
-			showReg: false, //是否显示注册表单
-		}
-	},
-	methods: { //用户名或者密码框获取焦点事件
-
-		focus: function (e) {
-			this.isShow = false;
-			var _target = $(e.target);
-			if (_target.val() !== "") {
-				_target.siblings(".clear").addClass("showClean");
-			}
-		}, //密码框或者用户名文本框市区焦点事件
-		blur: function (e) {
-			this.isShow = true;
-			var _this = this;
-			if ($("#userName").val() == "" || $("#password").val() == "") {
-				_this.msg = "请输入帐号和密码";
-				return;
-			}
-			$(e.target).siblings(".clear").removeClass("showClean");
-		}, //登录按钮点击事件
-		login: function () {
-			var _this = this;
-			if ($("#userName").val() == "" || $("#password").val() == "") {
-				_this.msg = "请输入帐号和密码";
-				return;
-			}
-			_this.isShow = true;
-			_this.isLoading = true;
-			_this.msg = "loading...";
-			setTimeout(function () {
-				_this.isLoading = false;
-				_this.msg = "登录帐户/密码错误";
-			}, 2000);
-			setTimeout(function () {
-				_this.$router.push({
-					path: "/tabs/home"
-				});
-			}, 5000);
-		}, //清除用户名或者密码事件
-		clean: function (e) {
-			$(e.target).removeClass("showClean").parent(".form-group").find(".form-control").val("").focus();
-		},
-		changePassword: function () {
-			this.showChangePassword = true;
-			this.showLogin = false;
-			this.msg = "重置密码";
-		},
-		reg: function () {
-			this.showLogin = false;
-			this.showReg = true;
-			this.msg = "注册帐号";
-		},
-		cancel: function () {
-			this.showChangePassword = false;
-			this.showReg = false;
-			this.showLogin = true;
-			this.msg = "后台管理登录";
-		}
-	}
+  name: 'login',
+  components: {
+    XInput,
+    XButton,
+    Group,
+    Flexbox,
+    FlexboxItem,
+    Box,
+  },
+  data() {
+    return {
+      msg: '后台管理登录',
+      isShow: true, //是否显示logo
+      isLoading: false, //是否给logo添加旋转的loading样式
+      showLogin: true, //是否显示登录框
+      showChangePassword: false, //是否显示重置密码表单
+      showReg: false, //是否显示注册表单
+    }
+  },
+  methods: { //用户名或者密码框获取焦点事件
+    focus: function(e) {
+      this.isShow = false;
+    }, //密码框或者用户名文本框市区焦点事件
+    blur: function(e) {
+      this.isShow = true;
+      var _this = this;
+      if ($("#userName").val() == "" || $("#password").val() == "") {
+        _this.msg = "请输入帐号和密码";
+        return;
+      }
+    }, //登录按钮点击事件
+    login: function() {
+      var _this = this;
+      if ($("#userName").val() == "" || $("#password").val() == "") {
+        _this.msg = "请输入帐号和密码";
+        return;
+      }
+      _this.isShow = true;
+      _this.isLoading = true;
+      _this.msg = "loading...";
+      setTimeout(function() {
+        _this.isLoading = false;
+        _this.msg = "登录帐户/密码错误";
+      }, 2000);
+      setTimeout(function() {
+        _this.$router.push({
+          path: "/tabs/home"
+        });
+      }, 5000);
+    },
+    changePassword: function() {
+      this.showChangePassword = true;
+      this.showLogin = false;
+      this.msg = "重置密码";
+    },
+    reg: function() {
+      this.showLogin = false;
+      this.showReg = true;
+      this.msg = "注册帐号";
+    },
+    cancel: function() {
+      this.showChangePassword = false;
+      this.showReg = false;
+      this.showLogin = true;
+      this.msg = "后台管理登录";
+    }
+  }
 }
 </script>
 <style scoped lang='less'>
@@ -226,29 +208,6 @@ export default {
         transition-delay: 0.3s;
         &.active {
             transform: translateY(-135px);
-        }
-        .form-group {
-            position: relative;
-            .clear {
-                position: absolute;
-                width: 24px;
-                height: 24px;
-                background-color: #999;
-                color: #FFF;
-                text-align: center;
-                line-height: 24px;
-                right: 10px;
-                bottom: 12px;
-                border-radius: 100%;
-                transition: transform 0.2s;
-                transform: scale(0);
-                &.showClean {
-                    transform: scale(1);
-                }
-                &:active {
-                    opacity: 0.7;
-                }
-            }
         }
     }
 }
