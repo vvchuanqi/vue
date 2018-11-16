@@ -17,7 +17,7 @@
 <div class="hello">
   <div class="content-box">
     <grid>
-      <grid-item label="调研工具" key="0"><img slot="icon" src="../../assets/home/icon_delivery_big.svg" height="140" width="72"></grid-item>
+      <grid-item label="体验反馈表" key="0"><img slot="icon" src="../../assets/home/icon_delivery_big.svg" height="140" width="72"></grid-item>
     </grid>
     <grid :cols="3" :show-lr-borders="false" :show-vertical-dividers="false">
       <grid-item label="调研工具" key="0">

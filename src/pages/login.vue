@@ -171,7 +171,7 @@ export default {
     padding-top: 50px;
     position: relative;
     &:after {
-        content: "@测试公司 2018";
+        content: "@企业云服务事业部 2018";
         position: absolute;
         bottom: 16px;
         opacity: 0.4;
