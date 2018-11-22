@@ -9,6 +9,10 @@ import stage2 from '@/pages/stage2/index'
 import my from '@/pages/my/index'
 import setting from '@/pages/my/setting'
 
+import article1 from '@/pages/article/index'
+import article2 from '@/pages/article/index2'
+import test1 from '@/pages/article/test1'
+
 Vue.use(Router)
 
 export default new Router({
@@ -25,7 +29,26 @@ export default new Router({
       {
         path: "home",
         name: "home",
-        component: home
+        component: home,
+        children:[
+          {
+            path:"article1",
+            name:"article1",
+            component:article1
+          },
+          {
+            path:"article2",
+            name:"article2",
+            component:article2,
+            children:[
+              {
+                path:"test1",
+                name:"test1",
+                component:test1
+              }
+            ]
+          }
+        ]
       },{
         path: "stage1",
         name: "stage1",

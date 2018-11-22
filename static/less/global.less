@@ -50,13 +50,13 @@ html {
     flex-flow: row;
     justify-content: space-between;
     height: 48px;
-    background: #FFF url("../../src/assets/bg_header.png") left top / 100% auto no-repeat;
+    background: #FFF;
     .title {
       flex: 1;
       padding: 0 16px;
       color: @title-color;
       font-weight: 800;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1;
     }
     .header-left a,
@@ -150,6 +150,7 @@ a:link {
       width: 28px;
       height: 28px;
       > img {
+        transition: all 0.2s;
         filter:brightness(1.5) grayscale(1);
       }
     }
@@ -181,3 +182,16 @@ a:link {
   transform: translateX(100%);
 }
 //end 转场动画
+// 覆盖grid的样式重写图标大小
+.weui-grid__icon {
+  width: 40px !important;
+  height: 40px !important;
+}
+.weui-grid:active {
+  background-color: #f8f8f9 !important;
+}
+//覆盖weui-cell的样式，重写active的背景色
+.vux-tap-active:active,
+.weui-cell_access:active {
+  background-color: #f8f8f9 !important;
+}

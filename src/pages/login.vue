@@ -9,7 +9,7 @@
   <div class="form" v-bind:class="{ active: !isShow }" v-if="showLogin">
     <h2 class="title">{{ msg }}</h2>
     <group>
-      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码" id="userName"></x-input>
+      <x-input title="" @on-focus="focus" @on-blur="blur" type="tel" placeholder="手机号码" id="userName"></x-input>
       <x-input title="" type="password" @on-focus="focus" @on-blur="blur" placeholder="请输入密码" id="password"></x-input>
     </group>
     <box gap="16px 0">
@@ -25,8 +25,8 @@
   <div class="form" v-bind:class="{ active: !isShow }" v-if="showChangePassword">
     <h2 class="title">{{ msg }}</h2>
     <group>
-      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码"></x-input>
-      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="验证码">
+      <x-input title="" @on-focus="focus" @on-blur="blur" type="tel" placeholder="手机号码"></x-input>
+      <x-input title="" @on-focus="focus" @on-blur="blur" type="number" placeholder="验证码">
         <x-button slot="right" mini>获取验证码</x-button>
       </x-input>
     </group>
@@ -44,8 +44,8 @@
   <div class="form" v-bind:class="{ active: !isShow }" v-if="showReg">
     <h2 class="title">{{ msg }}</h2>
     <group>
-      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="邮箱/手机号码"></x-input>
-      <x-input title="" @on-focus="focus" @on-blur="blur" placeholder="验证码">
+      <x-input title="" @on-focus="focus" @on-blur="blur" type="tel" placeholder="手机号码"></x-input>
+      <x-input title="" @on-focus="focus" @on-blur="blur" type="number" placeholder="验证码">
         <x-button slot="right" mini>获取验证码</x-button>
       </x-input>
     </group>
