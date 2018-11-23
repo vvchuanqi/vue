@@ -69,5 +69,6 @@ export default {
 }
 .card-demo-flex span {
     color: #f74c31;
+    font-size: 16px;
 }
 </style>

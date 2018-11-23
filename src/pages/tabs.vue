@@ -27,7 +27,7 @@ export default {
     return {
       title: '管理后台',
       currentIndex: 0,
-      tabarName: ['产品体验', '交互', '习惯', '我的'],
+      tabarName: ['UX', '交互', '习惯', '我的'],
     }
   },
   mounted() {
@@ -73,7 +73,7 @@ export default {
           this.$router.push({
             path: "/tabs/my"
           });
-          this.title = this.tabarName[2];
+          this.title = this.tabarName[3];
           break;
       }
     },

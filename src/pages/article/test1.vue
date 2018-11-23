@@ -38,13 +38,10 @@
         }
     }
 }
-.footer-card {
+.footer-btn {
     background-color: #FFF;
     text-align: center;
     padding: 16px;
-    &:active {
-        background-color: #f8f8f9;
-    }
 
 }
 </style>
@@ -145,8 +142,11 @@
         <checker-item :value="item" v-for="(item, index) in items1" :key="index">{{item}}</checker-item>
       </checker>
     </group>
-    <div class="footer-card">
+    <div class="footer-btn">
       <x-button type="primary" @click.native="done">提交</x-button>
+    </div>
+    <div v-transfer-dom>
+      <loading :show="show1" :text="text1"></loading>
     </div>
   </div>
 
@@ -162,10 +162,15 @@ import {
   CheckerItem,
   XButton,
   Flexbox,
-  FlexboxItem
+  FlexboxItem,
+  Loading,
+  TransferDomDirective as TransferDom
 } from 'vux'
 export default {
   name: 'home',
+  directives: {
+    TransferDom
+  },
   components: {
     Group,
     Cell,
@@ -174,11 +179,14 @@ export default {
     CheckerItem,
     XButton,
     Flexbox,
-    FlexboxItem
+    FlexboxItem,
+    Loading
   },
   data() {
     return {
       title: '可用性量表',
+      text1: '提交中...',
+      show1: false,
       value1: [],
       items1: ['1', '2', '3', '4', '5'],
       list1: [{
@@ -260,7 +268,11 @@ export default {
   },
   methods: {
     done: function() {
-
+      var _this = this;
+      _this.show1 = true;
+      setTimeout(function() {
+        _this.show1 = false;
+      }, 2000);
     }
   }
 }

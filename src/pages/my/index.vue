@@ -2,34 +2,32 @@
 <div class="hello">
   <!-- 用户信息 -->
   <flexbox class="user-info">
+    <div class="user-avatar"><img src="../../assets/my/avatar.jpg" alt="张三" height="64" width="64"></div>
     <flexbox-item>
       <div class="user-name">东方不败</div>
       <div class="help-block">日出东方,唯我不败,文成武德,千秋万载。</div>
     </flexbox-item>
-    <div class="user-avatar"><img src="../../assets/my/avatar.jpg" alt="张三" height="64" width="64"></div>
   </flexbox>
   <!-- / -->
   <!-- 快捷入口 -->
-  <div>
-    <flexbox class="quick-port">
-      <flexbox-item class="text-center">
-        <strong>1</strong>
-        <div class="port-name">密报</div>
-      </flexbox-item>
-      <flexbox-item class="text-center">
-        <strong>22</strong>
-        <div class="port-name">待办</div>
-      </flexbox-item>
-      <flexbox-item class="text-center">
-        <strong>6</strong>
-        <div class="port-name">堂报</div>
-      </flexbox-item>
-      <flexbox-item class="text-center">
-        <strong>8</strong>
-        <div class="port-name">会议</div>
-      </flexbox-item>
-    </flexbox>
-  </div>
+  <flexbox class="quick-port">
+    <flexbox-item class="text-center">
+      <strong>1</strong>
+      <div class="port-name">密报</div>
+    </flexbox-item>
+    <flexbox-item class="text-center">
+      <strong>22</strong>
+      <div class="port-name">待办</div>
+    </flexbox-item>
+    <flexbox-item class="text-center">
+      <strong>6</strong>
+      <div class="port-name">堂报</div>
+    </flexbox-item>
+    <flexbox-item class="text-center">
+      <strong>8</strong>
+      <div class="port-name">会议</div>
+    </flexbox-item>
+  </flexbox>
   <!-- / -->
   <!-- 列表 -->
   <group>
@@ -46,7 +44,7 @@
       <badge text="1"></badge>
     </cell>
     <cell title="收藏夹" is-link>
-      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_fav.svg">
+      <img slot="icon" height="24" width="24" style="margin-right:16px;display:block;" src="../../assets/my/icon_fav.svg">sdf
     </cell>
   </group>
   <group>
@@ -113,7 +111,6 @@ export default {
     .quick-port {
         background-color: #FFF;
         position: relative;
-        margin-bottom: 16px;
         .vux-flexbox-item {
             padding: 8px 0;
             &:active {

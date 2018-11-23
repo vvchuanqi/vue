@@ -188,10 +188,13 @@ a:link {
   height: 40px !important;
 }
 .weui-grid:active {
-  background-color: #f8f8f9 !important;
+  background-color: @bg-color !important;
 }
-//覆盖weui-cell的样式，重写active的背景色
+//覆盖weui-cell的样式
+.weui-cell {
+  padding: 16px !important;
+}
 .vux-tap-active:active,
 .weui-cell_access:active {
-  background-color: #f8f8f9 !important;
+  background-color: @bg-color !important;
 }
